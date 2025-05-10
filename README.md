@@ -1,4 +1,5 @@
 # Detection de la qualité du vin sur une echelle de 0 à 10
+Lancer l'app avec cette ligne dans le terminal : streamlit run app.py
 
 ## But du projet
 Le but de notre travail est de concevoir une webapp  qui va nous permettre de connaitre les caractéristiques qui influencent sur la qualité du vin.
