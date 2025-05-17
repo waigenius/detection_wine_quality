@@ -1,24 +1,43 @@
-# Evaluation de la qualité du vin, sur une echelle de 0 à 10
-
-Lancer l'app avec cette ligne dans le terminal : streamlit run app.py
-
-Dans le cadre de notre apprentissage dans le module Python, notre evaluation porte sur la création d'une webapp en utilisant un modèle de ML, avec l'apprentissage supervisée afin de répondre à une problématique donnée.
-
+# Projet Python : Évaluation de la qualité du vin, sur une échelle de 0 à 10
+Dans le cadre de notre formation au module Python, notre examen porte sur la création d'une application web (webapp) qui utilise un modèle de Machine Learning (ML), avec apprentissage supervisé, afin de répondre à une problématique donnée.
 
 ## L'objectif de la webapp
-L'objectif de notre travail est de concevoir une webapp  qui va prédire un score sur la qualité du vin selon les paramètres physico-chimiques fournies. A l'issu de notre nous permettre de connaitre les caractéristiques qui influencent sur la qualité du vin.
+L'objectif de notre travail est de concevoir une webapp qui prédit un score de qualité pour un vin, à partir de ses paramètres physico-chimiques. Ce projet nous permet d'identifier les caractéristiques physico-chimiques qui influencent la qualité du vin.
 
+Pour ce faire, nous avons utilisé un jeu de données (dataset) sur la qualité des vins en fonction de leurs caractéristiques physico-chimiques. Le dataset a été téléchargé depuis la plateforme Kaggle – Wine Quality Dataset. https://www.kaggle.com/datasets/yasserh/wine-quality-dataset/data
 
-## A propos du Dataset
-Le dataset utilisé a été téléchargé sur la plateforme Kaggle – Wine Quality Dataset. Il se compose de 13 colonnes dont 11 sont les caractéristiques et les deux autres sont le score associé du vin et Id.
+Il se compose de 13 colonnes, dont 11 sont les caractéristiques physico-chimiques du vin, et les deux autres sont le score de qualité associé et Id.
 
+Notre modèle apprend à reconnaître les caractéristiques importantes qui influencent le plus la qualité du vin, grâce à un apprentissage supervisé lors de la phase d'entraînement.
 
-## Modele de Machine Learning
-Il s'agit d'une modèle de regression supervisée. Algorithme RandomForestRegressor de Scikit-learn. Modèle exporté sous model.joblib et utilisé par la WebApp.
+## Modèle de Machine Learning
+Nous avons utilisé un modèle de régression supervisée, et plus précisément l'algorithme *RandomForestRegressor* de la librairie *Scikit-learn*. Le modèle entraîné est exporté au format model.joblib et est utilisé par la webapp.
 
-## Le fonctionnement global de l'application
-Entrées utilisateur grâce aux sliders intéractifs pour définir les paramètres du vin. Pour la prédisction, nous avons une éstimation de la qualité via le modèle ML, message personnalisé en fonction du score et description sommelier automatique. Pour la partie visualisation, nous avons un histogramme de scores du dataset avec repère utilisateur, comparaison du profil chimique utilisateurs versus moyenne globale, carte de chaleur des corrélations avec la qualité et Jauge dynamique du score estimé. Une fonction d'export en format CSV en bonus.
+## Fonctionnement global de l'application
+Pour lancer l'application, utilisez la commande suivante dans votre terminal :
+
+``streamlit run app.py``
+
+L'application offre une interface utilisateur avec des curseurs interactifs pour définir les paramètres du vin.
+Pour chaque ensemble de paramètres, l'application fournit :
+
+* Une estimation de la qualité du vin, via le modèle de ML.
+
+* Un message personnalisé en fonction du score prédit.
+
+* Une description automatique du vin, de type sommelier, basée sur le score.
+
+* L'application inclut également des visualisations :
+
+    - Un histogramme des scores de qualité du dataset, avec un repère visuel indiquant la prédiction pour les paramètres saisis par l'utilisateur.
+
+    - Un graphique comparant le profil chimique du vin de l'utilisateur à la moyenne globale du dataset.
+
+    - Une carte de chaleur des corrélations entre les caractéristiques physico-chimiques et la qualité du vin.
+
+    - Une jauge dynamique représentant le score de qualité estimé.
+
+En plus, nous avons mis un lien qui permet d'exporter les résultats de l'analyse au format CSV.
 
 ## Conclusion
-Ce projet montre comment un modèle de machine learning peut être intégré dans une application conviviale et pédagogique.
-Il illustre l'intérêt de l'interactivité pour rendre un modèle plus accessible, interprétable et visuellement engageant pour l'utilisateur final.
+Ce projet démontre comment un modèle de machine learning peut être intégré dans une application conviviale et pédagogique. L'application rend un modèle de ML plus accessible, interprétable et visuellement attrayant pour l'utilisateur final.

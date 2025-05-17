@@ -1,5 +1,5 @@
 # WebApp Streamlit pour prédire la qualité d'un vin à partir de ses
-# caractéristiques chimiques, à l'aide d'un modèle RandomForest entraîné.
+# caractéristiques chimiques, à l'aide d'un modèle RandomForest Regression entraîné.
 
 import streamlit as st
 import pandas as pd
@@ -9,20 +9,24 @@ import plotly.express as px
 import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import MinMaxScaler
 
 # Chargement du modèle et du dataset
 @st.cache_resource
 def load_model():
-    return joblib.load("model.joblib_test")
+    return joblib.load("model_final.joblib")
 
 @st.cache_data
 def load_dataset():
-    return pd.read_csv("dataset_wine.csv", sep=",")  # ou winequality-red.csv
+    df_red = pd.read_csv("winequality-red.csv", sep=";")
+    df_white = pd.read_csv("winequality-  white.csv", sep=";")
+    df = pd.concat([df_red, df_white])
+    return df
 
 model = load_model()
 df = load_dataset()
-features = [col for col in df.columns if col not in ["quality", "Id"]]
+
+#Caractéristiques ie Varaibles X
+features = [col for col in df.columns if col not in ["quality"]]
 
 # Configuration de l'interface
 st.title("🍷 Prédisez la qualité de votre vin")
@@ -80,6 +84,11 @@ user_input = pd.DataFrame([{
 with col_output:
     st.subheader("📈 Résultats")
     if st.button("🍷 Prédire la qualité du vin"):
+        # prediction_float = model.predict(user_input)[0]
+        # #Arrondir la valeur de la prédiction en enitier
+        # prediction = np.round(prediction_float).astype(int)
+        # prediction = round(prediction, 2)
+
         prediction = model.predict(user_input)[0]
         prediction = round(prediction, 2)
         st.metric(label="Qualité estimée", value=f"{prediction} / 10")
