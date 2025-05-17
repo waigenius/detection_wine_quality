@@ -6,12 +6,25 @@ L'objectif de notre travail est de concevoir une webapp qui prédit un score de 
 
 Pour ce faire, nous avons utilisé un jeu de données (dataset) sur la qualité des vins en fonction de leurs caractéristiques physico-chimiques. Le dataset a été téléchargé depuis la plateforme Kaggle – Wine Quality Dataset. https://www.kaggle.com/datasets/yasserh/wine-quality-dataset/data
 
-Il se compose de 13 colonnes, dont 11 sont les caractéristiques physico-chimiques du vin, et les deux autres sont le score de qualité associé et Id.
+Il se compose de douze(12) colonnes, dont la variable cible *quality* et les  onze(11) caractéristiques physico-chimiques du vin qui sont:
+- *fixed acidity*: acidité fixe
+- *volatile acidity*: acidité volatile
+- *citric acid*: acide citrique
+- *residual sugar*: sucre résiduel
+- *chlorides*: chlorures
+- *free sulfur dioxide*: dioxyde de soufre libre
+- *total sulfur dioxide*: dioxyde de soufre total
+- *density*: densité
+- *pH*
+- *sulphates*: sulfates
+- *alcohol*: alcool
 
 Notre modèle apprend à reconnaître les caractéristiques importantes qui influencent le plus la qualité du vin, grâce à un apprentissage supervisé lors de la phase d'entraînement.
 
 ## Modèle de Machine Learning
 Nous avons utilisé un modèle de régression supervisée, et plus précisément l'algorithme *RandomForestRegressor* de la librairie *Scikit-learn*. Le modèle entraîné est exporté au format model.joblib et est utilisé par la webapp.
+
+Le taux d'erreur du modèle est de 46%. 
 
 ## Fonctionnement global de l'application
 Pour lancer l'application, utilisez la commande suivante dans votre terminal :
@@ -40,4 +53,4 @@ Pour chaque ensemble de paramètres, l'application fournit :
 En plus, nous avons mis un lien qui permet d'exporter les résultats de l'analyse au format CSV.
 
 ## Conclusion
-Ce projet démontre comment un modèle de machine learning peut être intégré dans une application conviviale et pédagogique. L'application rend un modèle de ML plus accessible, interprétable et visuellement attrayant pour l'utilisateur final.
+En définitive, ce projet démontre comment un modèle de machine learning peut être intégré dans une application conviviale et pédagogique. L'application rend un modèle de ML plus accessible, interprétable et visuellement attrayant pour l'utilisateur final.
