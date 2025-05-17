@@ -52,18 +52,18 @@ with col_inputs:
     
     # Sliders pour chaque variable d'entrée (groupés en 2 colonnes)
     with col1:
-        fixed_acidity = st.slider("Fixed Acidity", 4.0, 16.0, 7.0, 0.1)
-        citric_acid = st.slider("Citric Acid", 0.0, 1.0, 0.3, 0.01)
-        residual_sugar = st.slider("Residual Sugar", 0.5, 16.0, 2.0, 0.1)
+        fixed_acidity = st.slider("Acidité fixe", 4.0, 16.0, 7.0, 0.1)
+        citric_acid = st.slider("Acide citrique", 0.0, 1.0, 0.3, 0.01)
+        residual_sugar = st.slider("Sucre résiduel", 0.5, 16.0, 2.0, 0.1)
         free_sulfur_dioxide = st.slider("Free SO₂", 1, 72, 15, 1)
         pH = st.slider("pH", 2.8, 4.2, 3.2, 0.01)
-        alcohol = st.slider("Alcohol (%)", 8.0, 15.0, 10.0, 0.1)
+        alcohol = st.slider("Alcool (%)", 8.0, 15.0, 10.0, 0.1)
     with col2:
-        volatile_acidity = st.slider("Volatile Acidity", 0.1, 1.5, 0.5, 0.01)
-        chlorides = st.slider("Chlorides", 0.01, 0.2, 0.05, 0.005)
+        volatile_acidity = st.slider("Acidité volatile", 0.1, 1.5, 0.5, 0.01)
+        chlorides = st.slider("Chlorures", 0.01, 0.2, 0.05, 0.005)
         total_sulfur_dioxide = st.slider("Total SO₂", 6, 289, 46, 1)
-        sulphates = st.slider("Sulphates", 0.2, 2.0, 0.5, 0.01)
-        density = st.slider("Density", 0.9900, 1.0050, 0.9960, 0.0001)
+        sulphates = st.slider("Sulfates", 0.2, 2.0, 0.5, 0.01)
+        density = st.slider("Densité", 0.9900, 1.0050, 0.9960, 0.0001)
 
 # Construction de la ligne d'entrée utilisateur sous forme de DataFrame
 user_input = pd.DataFrame([{
@@ -82,7 +82,7 @@ user_input = pd.DataFrame([{
 
 # PRÉDICTION ET AFFICHAGE DES RÉSULTATS
 with col_output:
-    st.subheader("📈 Résultats")
+    st.subheader("📈 Résultat")
     if st.button("🍷 Prédire la qualité du vin"):
         # prediction_float = model.predict(user_input)[0]
         # #Arrondir la valeur de la prédiction en enitier
