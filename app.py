@@ -18,7 +18,7 @@ def load_model():
 @st.cache_data
 def load_dataset():
     df_red = pd.read_csv("winequality-red.csv", sep=";")
-    df_white = pd.read_csv("winequality-  white.csv", sep=";")
+    df_white = pd.read_csv("winequality-white.csv", sep=";")
     df = pd.concat([df_red, df_white])
     return df
 
