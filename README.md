@@ -10,7 +10,7 @@ Notre étude vise à identifier les constituants qui influencent la qualité du 
 
 Dans cette perspective, notre objectif est de concevoir une application web capable de prédire un score de qualité pour un vin, à partir de ses paramètres physico-chimiques.
 
-Pour ce faire, nous avons utilisé un jeu de données (dataset) sur la qualité des vins en fonction de leurs caractéristiques physico-chimiques. Le dataset a été téléchargé à l'addresse suivante https://archive.ics.uci.edu/dataset/186/wine+quality
+Pour ce faire, nous avons utilisé un jeu de données (dataset) sur la qualité des vins en fonction de leurs caractéristiques physico-chimiques. Le dataset a été trouvé sur Kaggle via ce lien https://www.kaggle.com/discussions/getting-started/256014 , nous avons choisi le dataset sur le vin qui nous a redirigé sur l'addresse suivante https://archive.ics.uci.edu/dataset/186/wine+quality
 
 Il se compose de douze(12) colonnes, dont la variable cible *quality* et les  onze(11) caractéristiques physico-chimiques du vin qui sont:
 - *fixed acidity*: acidité fixe
